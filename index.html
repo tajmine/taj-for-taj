@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Taj ♡</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;font-family:Georgia,serif;color:#754455;
+ background:linear-gradient(180deg,#fff0f6,#fce0eb,#f8edf4);
+ text-align:center;overflow-x:hidden
+}
+header{padding:65px 20px 35px}
+h1{font-size:clamp(42px,10vw,68px);font-weight:normal;margin:15px 0}
+h2{font-weight:normal}
+p{line-height:1.9}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;font-size:11px}
+.lily{font-size:48px}
+section{
+ max-width:680px;margin:25px auto;padding:35px 25px;
+ width:90%;background:#fff9fc;border:1px solid #f4d1df;
+ border-radius:24px;box-shadow:0 8px 30px #c887a21a
+}
+button{
+ background:#e9a5bf;color:#fff;border:0;border-radius:30px;
+ padding:13px 22px;font:inherit;cursor:pointer;margin:8px
+}
+button:hover{background:#d887a8}
+#countdown{font-size:23px;line-height:1.8}
+footer{padding:35px 15px 55px;font-size:13px}
+.heart{position:fixed;bottom:-30px;animation:float 8s linear infinite;
+ pointer-events:none;opacity:.65}
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(25deg);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="lily">🌷 🌸 🌷</div>
+ <p class="eyebrow">A little world made just for you</p>
+ <h1>For Taj ♡</h1>
+ <p>My favourite person, in my favourite little corner of the universe.</p>
+ <div class="lily">🌿 🩷 🌿</div>
+</header>
+
+<section>
+ <p class="eyebrow">If I could give you anything</p>
+ <h2>I'd give you a garden of lilies 🌷</h2>
+ <p>
+ A thousand flowers for the girl who loves them,
+ a thousand pink skies, and a thousand peaceful
+ places where we could sit together and forget
+ about the rest of the world.
+ </p>
+ <p>Until then, here's a little piece of my world, made for you.</p>
+</section>
+
+<section>
+ <p class="eyebrow">A letter for you</p>
+ <h2>Dear Taj, ♡</h2>
+ <p style="text-align:left">
+ I don't think you understand how much you mean to me.
+ I love the way you talk, your jokes, your laugh,
+ your hair, and your eyes. Even the smallest things
+ about you can make an ordinary day feel special.
+ <br><br>
+ I know I haven't always handled things the right way.
+ I'm sorry for the times I've hurt you, especially
+ when I should have listened and trusted you.
+ You deserve patience, honesty, and someone who
+ tries to understand you instead of jumping to conclusions.
+ <br><br>
+ I want to keep learning how to love you better.
+ I dream about the day we finally get to meet,
+ when the distance between us is no longer just
+ something we talk about.
+ <br><br>
+ Until that summer comes, I hope this little website
+ reminds you that someone out here thinks about you,
+ appreciates you, and is excited about the memories
+ we still have to make.
+ <br><br>
+ You're my favourite plot twist, my favourite laugh,
+ and my favourite person to annoy.
+ <br><br>
+ Always your Mr. Fart, ♡
+ </p>
+</section>
+
+<section>
+ <p class="eyebrow">One day, hopefully</p>
+ <h2>Our summer together 🌸</h2>
+ <p>One little countdown to a day I'm excited for.</p>
+ <div id="countdown">Counting down to our next chapter…</div>
+ <p style="font-size:12px">A hopeful date: June 21, 2028 ♡</p>
+</section>
+
+<section>
+ <p class="eyebrow">A very important question</p>
+ <h2>Do you know what I love about you? 🩷</h2>
+ <button onclick="document.getElementById('secret').hidden=false">
+ Tell me ♡
+ </button>
+ <p id="secret" hidden>
+ Literally so much. Your laugh, your eyes, your hair,
+ your personality, your heart… and yes, apparently
+ you have very specific opinions about my butt. 😭💀
+ <br><br>Never letting you live that one down. ♡
+ </p>
+</section>
+
+<section>
+ <h2>A tiny reminder 🌷</h2>
+ <p>
+ You don't have to be perfect to be loved.
+ I hope life gives you peaceful mornings, beautiful
+ gardens, pink sunsets, and a million reasons to smile.
+ </p>
+ <div class="lily">♡ 🌸 ♡</div>
+ <p>And hopefully, some of those memories will be with me.</p>
+</section>
+
+<footer>
+ Made with love, just for Taj ♡<br>
+ Somewhere between today and our someday.
+</footer>
+
+<script>
+const target = new Date("2028-06-21T00:00:00");
+function updateCountdown(){
+ const el=document.getElementById("countdown");
+ const diff=target-new Date();
+ if(diff<=0){el.textContent="Our next chapter starts now ♡";return;}
+ const days=Math.floor(diff/86400000);
+ const hours=Math.floor(diff/3600000)%24;
+ const mins=Math.floor(diff/60000)%60;
+ const secs=Math.floor(diff/1000)%60;
+ el.textContent=days+" days · "+hours+" hours · "+
+ mins+" minutes · "+secs+" seconds ♡";
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+const flowers=["♡","🌸","♥","🌷"];
+setInterval(()=>{
+ const h=document.createElement("span");
+ h.className="heart";
+ h.textContent=flowers[Math.floor(Math.random()*flowers.length)];
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(15+Math.random()*15)+"px";
+ h.style.animationDuration=(6+Math.random()*5)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),11000);
+},900);
+</script>
+</body>
+</html>
